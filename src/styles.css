@@ -1,1 +1,130 @@
 /* You can add global styles to this file, and also import other style files */
+
+@import '~normalize.css';
+html,
+body {
+    height: 100%;
+    margin: 0px;
+    padding: 0px;
+}
+
+.derecha {
+    flex: 1 1 auto;
+}
+
+button.mat-menu-item {
+    outline: none;
+}
+
+.fast {
+    -webkit-animation-duration: 0.3s;
+    animation-duration: 0.3s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both
+}
+
+.child {
+    background-color: #85929E;
+}
+
+.row {
+    color: black;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.size {
+    width: 100%;
+}
+
+.img-avatar {
+    width: 200px;
+    height: 150px;
+}
+
+.centered {
+    padding-right: 100px;
+    padding-left: 100px;
+    padding-top: 100px;
+}
+
+.img-avatar {
+    height: 200px;
+    width: 200px;
+}
+
+.w75 {
+    width: 75px;
+}
+
+.w100 {
+    width: 100px;
+}
+
+.w140 {
+    width: 140px;
+}
+
+.w200 {
+    width: 200px;
+}
+
+.avatar {
+    border-radius: 100%;
+    width: 50px;
+}
+
+.oculto {
+    display: none;
+}
+
+.fondo-modal-imagen {
+    background-color: rgba(0, 0, 0, 0.4);
+    left: 0px;
+    height: 100%;
+    position: fixed;
+    top: 0px;
+    width: 100%;
+    z-index: 9999;
+}
+
+.espaciado {
+    margin-bottom: 20px;
+}
+
+.form-control {
+    display: inline;
+}
+
+.margen {
+    margin-right: 50px;
+}
+
+.marginIcon {
+    margin-right: 5px;
+}
+
+.colorStyle {
+    background-color: #dadde7;
+}
+
+.table td,
+th {
+    text-align: center;
+}
+
+.position {
+    margin: auto;
+    margin-top: 20px;
+}
+
+footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 40px;
+    margin-bottom: 10px;
+}
+
+.backLogin {
+    background-position: 50% 50%;
+}

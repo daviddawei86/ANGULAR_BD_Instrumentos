@@ -1,0 +1,64 @@
+<body class="backLogin" style="background-image:url(../../../../assets/img/loginBack.jpg); background-repeat: no-repeat;">
+
+    <div id="register">
+        <h3 class="text-center text-white pt-5">BASE DE DATOS</h3>
+        <div class="container">
+            <div id="register-row" class="row justify-content-center align-items-center">
+                <div id="register-column" class="col-md-6">
+                    <div id="register-box" class="col-md-12">
+
+                        <form id="loginform" autocomplete="off" [formGroup]="registerForm" (ngSubmit)="crearUsuario()">
+                            <h3 class="text-center text-info">Regístrate</h3>
+                            <div class="form-group">
+                                <label for="username" class="text-info">USUARIO:</label><br>
+                                <input type="text" id="username" class="form-control" formControlName="nombre">
+                            </div>
+                            <div class="form-group">
+                                <label for="email" class="text-info">EMAIL:</label><br>
+                                <input type="text" id="email" class="form-control" formControlName="email">
+                            </div>
+                            <div class="form-group">
+                                <label for="password" class="text-info">CONTRASEÑA:</label><br>
+                                <input type="password" name="password" id="password" class="form-control" formControlName="password">
+                            </div>
+                            <div class="form-group">
+                                <label for="password" class="text-info">REPITE CONTRASEÑA:</label><br>
+                                <input type="password" name="password2" id="password2" class="form-control" formControlName="password2">
+                            </div>
+                            <div class="form-group">
+
+                                <input id="checkbox-signup" type="checkbox" formControlName="terminos">
+                                <label for="checkbox-signup"> Acepto todos los terminos <a href="#">Terminos</a></label>
+
+                            </div>
+
+
+                            <div class="row">
+                                <div class="col text-danger">
+                                    <p *ngIf="campoNoValido('nombre')">* El nombre es obligatorio</p>
+                                    <p *ngIf="campoNoValido('email')">* El email es obligatorio y tiene que ser valido</p>
+                                    <p *ngIf="invalidPassword()">* Las contraseñas deben de ser iguales</p>
+                                    <p *ngIf="aceptarTerminos()">* Debe de aceptar los terminos</p>
+                                </div>
+                            </div>
+
+
+                            <div class="form-group">
+                                <button class="btn btn-info btn-lg btn-block text-uppercase waves-effect waves-light" type="submit">Terminar registro</button>
+                            </div>
+
+
+
+
+                            <div id="register-link form-group" class="text-right">
+                                <p>Ya tienes una cuenta? <a routerLink="/auth/login" class="text-info m-l-5"><b>Iniciar sesión</b></a></p>
+                            </div>
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <app-footer></app-footer>
+</body>

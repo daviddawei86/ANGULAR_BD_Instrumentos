@@ -1,0 +1,71 @@
+<mat-sidenav-container fullscreen>
+    <mat-sidenav #sidenav mode="push">
+
+        <mat-toolbar>
+            <span>Menú</span>
+            <span class="derecha"></span>
+            <button mat-icon-button (click)="sidenav.toggle()">
+            <mat-icon>menu</mat-icon>
+            </button>
+
+
+        </mat-toolbar>
+
+        <mat-nav-list>
+
+            <a routerLink="./listado" mat-list-item (click)="sidenav.toggle()">
+                <mat-icon mat-list-icon>list</mat-icon>
+                <span>Listado de Válvulas</span>
+            </a>
+
+
+            <a *ngIf="usuarioService.adminUsuarios()" routerLink="./usuarios" mat-list-item (click)="sidenav.toggle()">
+                <mat-icon mat-list-icon>add</mat-icon>
+                <span>Listado de Usuarios</span>
+            </a>
+
+
+        </mat-nav-list>
+
+    </mat-sidenav>
+
+
+    <mat-toolbar>
+
+
+        <button mat-button (click)="sidenav.toggle()">
+        <mat-icon>build</mat-icon>
+        </button>
+
+        <span class="derecha"></span>
+
+        <div class="margen">
+            <a class="nav-link hidden-sm-down waves-effect waves-dark" href="javascript:void(0)">
+            </a>
+            <form class="app-search" (submit)="buscar(txtTermino.value)">
+                <a class="srh-btn"><i class=" marginIcon fas fa-search"></i></a>
+                <input type="text" class="form-control" placeholder="Búsqueda Global" #txtTermino></form>
+
+
+        </div>
+
+        <button mat-button [matMenuTriggerFor]="menu"><img [src]="usuario.imagenUrl" alt="usuario" width="60" height="60"></button>
+        <mat-menu #menu="matMenu">
+            <button mat-menu-item routerLink="./perfil">Mi perfil</button>
+            <button mat-menu-item (click)="logout()">Logout</button>
+        </mat-menu>
+
+
+
+
+    </mat-toolbar>
+
+    <div class="size">
+        <router-outlet></router-outlet>
+    </div>
+
+
+
+</mat-sidenav-container>
+
+<app-modal-imagen></app-modal-imagen>
